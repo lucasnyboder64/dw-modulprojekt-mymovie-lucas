@@ -1,10 +1,8 @@
 import { genres } from "../genres.js";
 import { GenrePill } from "./GenrePill.js";
 
-export function Movie(title, image, rating, withGenre, genre_ids) {
+export function Movie(title, image, rating, withGenre, genre_ids, movie_id) {
     const movie = document.createElement("div");
-    console.log(genre_ids);
-    console.log("genres: ", genre_ids && genre_ids.map((genre_id)=>genres.find((genre)=>genre.id==genre_id).name));
     movie.classList.add("movie");
     if (!withGenre) {
         movie.innerHTML = `
@@ -21,7 +19,7 @@ export function Movie(title, image, rating, withGenre, genre_ids) {
         return movie;
     } else {
         movie.innerHTML = `
-        <img src="${image}" class="thumb">
+        <img src="${image}" class="thumb" onclick=location.href="detail.html?id="+${movie_id}>
 
         <div id="info">
             <h1>${title}</h1>
@@ -38,3 +36,5 @@ export function Movie(title, image, rating, withGenre, genre_ids) {
         return movie;
     }
 }
+
+// https://api.themoviedb.org/3/movie/{movie_id}

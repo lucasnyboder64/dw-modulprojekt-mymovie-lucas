@@ -15,8 +15,7 @@ let popular_url = "https://api.themoviedb.org/3/movie/popular";
 let showing_movies = [];
 let popular_movies_list = [];
 
-let ids = [];
-let genreIndicies = [];
+let id = 969681;
 
 fetch(now_playing_url, {
   headers: {
@@ -35,28 +34,19 @@ fetch(popular_url, {
   }
 }).then(response => response.json()).then(data => {
   popular_movies_list = [...data.results];
-  console.log(genres.find((genre)=>genre.id==28));
-  console.log(data.results[0].genre_ids.map((genre_id)=>genres.find((genre)=>genre.id==genre_id).name));
-  
-  console.log(...data.results);
+  //console.log(data.results);
   addMoviePopular();
-  addGenre();
+  
 });
 
 function addMoviePopular() {
   popular_movies_list.forEach((movie) => {
-    popular_movies.append(Movie(movie.title, imageUrl + movie.poster_path, movie.vote_average.toFixed(2), true, movie.genre_ids));
+    popular_movies.append(Movie(movie.title, imageUrl + movie.poster_path, movie.vote_average.toFixed(2), true, movie.genre_ids, movie.id));
   });
-}
-
-function addGenre(){
-  popular_movies.querySelectorAll(".genres").forEach((genre)=>{
-    console.log(genre);
-  });  
 }
 
 function addMovieSeen() {
   showing_movies.forEach((movie) => {
-    now_showing_movies.append(Movie(movie.title, imageUrl + movie.poster_path, movie.vote_average.toFixed(2), false, null));
+    now_showing_movies.append(Movie(movie.title, imageUrl + movie.poster_path, movie.vote_average.toFixed(2), false, null, movie.id));
   });
 }
