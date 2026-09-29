@@ -1,0 +1,158 @@
+body {
+    background-color: #ededed;
+    box-sizing: border-box;
+}
+
+#root {
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+    background-color: white;
+}
+
+.top {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.top h1 {
+    text-align: center;
+    grid-column: 2
+}
+
+#title {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-left: 16px;
+    padding-bottom: 10px;
+}
+
+#title h1 {
+    font-family: 'Merriweather';
+    font-size: 16px;
+}
+
+.top h1 {
+    font-family: 'Merriweather';
+    font-size: 1.4rem;
+}
+
+#now_showing_movies::-webkit-scrollbar {
+    display: none;
+}
+
+#popular_movies::-webkit-scrollbar {
+    display: none;
+}
+
+.movie h1 {
+    font-family: 'Mulish';
+    font-size: 14px;
+}
+
+#toggle {
+    width: 38px;
+    height: 21px;
+    border-radius: 100px;
+    outline: none;
+    border: none;
+    background-color: #AAA9B1;
+    position: relative;
+    grid-column: 3;
+    justify-self: end;
+    margin-right: 34px;
+}
+
+#handle {
+    width: 18px;
+    height: 17px;
+    background-color: white;
+    border-radius: 100%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 0px;
+    right: 0px;
+}
+
+.star {
+    width: 12px;
+    height: 12px;
+}
+
+.rating_text {
+    font-family: 'Mulish';
+    font-size: 12px;
+    color: #9C9C9C;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.see_more {
+    font-size: 10px;
+    background: white;
+    border: 1px solid #AAA9B1;
+    color: #AAA9B1;
+    padding: 5px;
+    border-radius: 12px;
+    outline: none;
+    cursor: pointer;
+    justify-self: end;
+    margin-right: 30px;
+}
+
+#now_showing_movies {
+    display: flex;
+    overflow-x: scroll;
+    padding-left: 16px;
+    gap: 16px;
+}
+
+.thumb {
+    width: 143px;
+    height: 212px;
+    border-radius: 10px;
+}
+
+#now_showing_movies h1 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+#popular_movies {
+    height: 292px;
+    overflow-y: scroll;
+    padding-left: 16px;
+    display: grid;
+    gap: 10px;
+}
+
+#popular_movies .movie {
+    display: flex;
+}
+
+#info {
+    padding-left: 15px;
+}
+
+.box {
+    width: 61px;
+    height: 18px;
+    background-color: #DBE3FF;
+    color: #88A4E8;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px;
+    align-items: center;
+    justify-items: center;
+}
