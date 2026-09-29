@@ -31,7 +31,7 @@ export function Movie(title, image, rating, withGenre, genre_ids) {
             </div>
 
             <div class="genres">
-                <p>${genre_ids && genre_ids.map((genre_id)=>GenrePill(genres.find((genre)=>genre.id==genre_id).name)).join("")}</p>
+                <p class="genre_pill_text">${genre_ids && genre_ids.map((genre_id)=>GenrePill(genres.find((genre)=>genre.id==genre_id).name.toUpperCase())).join("")}</p>
             </div>
         </div>
     `;
