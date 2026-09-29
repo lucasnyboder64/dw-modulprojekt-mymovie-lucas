@@ -1,5 +1,10 @@
-export function Movie(title, image, rating, withGenre) {
+import { genres } from "../genres.js";
+import { GenrePill } from "./GenrePill.js";
+
+export function Movie(title, image, rating, withGenre, genre_ids) {
     const movie = document.createElement("div");
+    console.log(genre_ids);
+    console.log("genres: ", genre_ids && genre_ids.map((genre_id)=>genres.find((genre)=>genre.id==genre_id).name));
     movie.classList.add("movie");
     if (!withGenre) {
         movie.innerHTML = `
@@ -26,7 +31,7 @@ export function Movie(title, image, rating, withGenre) {
             </div>
 
             <div class="genres">
-                
+                <p>${genre_ids && genre_ids.map((genre_id)=>GenrePill(genres.find((genre)=>genre.id==genre_id).name)).join("")}</p>
             </div>
         </div>
     `;

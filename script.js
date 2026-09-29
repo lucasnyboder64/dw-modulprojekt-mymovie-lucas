@@ -1,6 +1,5 @@
 import { Movie } from "./components/Movie.js";
 import { genres } from "./genres.js";
-import { Box } from "./components/Box.js";
 
 let token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiN2UyMmY2ZTViNmE5YTdjMWU1OWUyNDBlMDg1OWExZSIsIm5iZiI6MTc5MDU3ODY4OC42MjMwMDAxLCJzdWIiOiI2YWJhMTAwMGE4MTNiOThiNTQwNDA0Y2YiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4W43qlkFjJPQ7fXwxbMSVrrneDq0JpFsrx7H7I5-HQw";
 
@@ -36,36 +35,28 @@ fetch(popular_url, {
   }
 }).then(response => response.json()).then(data => {
   popular_movies_list = [...data.results];
-  console.log(data.results[0].genre_ids);
+  console.log(genres.find((genre)=>genre.id==28));
+  console.log(data.results[0].genre_ids.map((genre_id)=>genres.find((genre)=>genre.id==genre_id).name));
+  
+  console.log(...data.results);
   addMoviePopular();
   addGenre();
 });
 
 function addMoviePopular() {
   popular_movies_list.forEach((movie) => {
-    popular_movies.append(Movie(movie.title, imageUrl + movie.poster_path, movie.vote_average.toFixed(2), true));
+    popular_movies.append(Movie(movie.title, imageUrl + movie.poster_path, movie.vote_average.toFixed(2), true, movie.genre_ids));
   });
-
-  //popular_movies_list.querySelectorAll(".genres");
-  console.log(popular_movies.querySelectorAll(".genres"));
 }
 
 function addGenre(){
- /* popular_movies.querySelectorAll(".genres").forEach((genre)=>{
-    genre.innerHTML += "<div>test</div>";
-  });*/
-
-  popular_movies_list.forEach((elem)=>{
-//    const ids = elem.genre_ids;
-  //  console.log(ids);
-      ids.push(elem.genre_ids);
-  });
-
-  console.log(ids);
+  popular_movies.querySelectorAll(".genres").forEach((genre)=>{
+    console.log(genre);
+  });  
 }
 
 function addMovieSeen() {
   showing_movies.forEach((movie) => {
-    now_showing_movies.append(Movie(movie.title, imageUrl + movie.poster_path, movie.vote_average.toFixed(2), false));
+    now_showing_movies.append(Movie(movie.title, imageUrl + movie.poster_path, movie.vote_average.toFixed(2), false, null));
   });
 }

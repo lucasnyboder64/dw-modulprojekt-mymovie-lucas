@@ -142,11 +142,12 @@ body {
     padding-left: 15px;
 }
 
-.box {
+.genre_pill {
     width: 61px;
     height: 18px;
     background-color: #DBE3FF;
     color: #88A4E8;
+    padding: 10px;
 }
 
 nav {
