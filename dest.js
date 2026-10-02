@@ -40,8 +40,8 @@ fetch(moviedb_url + "?append_to_response=credits", {
   detail_top.classList.add("detail_top");
   detail_top.append(img);
   film_detail.innerHTML = `<h1 id=film_title>${data.title}</h1>
-  <img src="images/star.svg" class="star">
-                <p class="rating_text">${data.vote_average} /10 IMDb</p>
+  
+                <p class="rating_text"><img src="images/star.svg" class="star"> ${data.vote_average} /10 IMDb</p>
                 `;
   
   const genres = document.createElement("div");
@@ -70,9 +70,12 @@ fetch(moviedb_url + "?append_to_response=credits", {
   });
   
   for(let i=0; i<=data.genres.length-1; i++){
-    genre_pill_container.innerHTML += `${GenrePill()}`;
+    genre_pill_container.innerHTML += `${GenrePill(data.genres[i].name)}`;
   }
-  film_detail.append(genre_pill_container, description, cast, castText);
+
+
+
+  film_detail.append(genre_pill_container, description, castText, cast);
 
   main.append(detail_top);
   main.append(film_detail, genres);

@@ -4,6 +4,6 @@ export function GenrePill(text){
     //genre_pill.textContent = text;
 
     return `
-        <span class="genre_pill">${text}</span>
+        <span class="genre_pill">${text.toUpperCase()}</span>
     `;
 }
