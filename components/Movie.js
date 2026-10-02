@@ -6,7 +6,7 @@ export function Movie(title, image, rating, withGenre, genre_ids, movie_id) {
     movie.classList.add("movie");
     if (!withGenre) {
         movie.innerHTML = `
-        <img src="${image}" class="thumb">
+        <img src="${image}" class="thumb" onclick=location.href="detail.html?id="+${movie_id}>
 
         <div id="info">
             <h1>${title}</h1>

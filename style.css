@@ -5,6 +5,22 @@ body {
     padding: 0;
 }
 
+header {
+    position: relative;
+}
+
+main {
+    position: relative;
+}
+
+.arrow {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    z-index: 1;
+    cursor: pointer;
+}
+
 #root {
     margin: 0 auto;
     max-width: 480px;
@@ -34,7 +50,7 @@ body {
 
 #title h1 {
     font-family: 'Merriweather';
-    font-size: 16px;
+    font-size: 2em;
 }
 
 .top h1 {
@@ -47,6 +63,10 @@ body {
 }
 
 #popular_movies::-webkit-scrollbar {
+    display: none;
+}
+
+.cast_section::-webkit-scrollbar {
     display: none;
 }
 
@@ -66,6 +86,10 @@ body {
     grid-column: 3;
     justify-self: end;
     margin-right: 34px;
+    position: absolute;
+    right: 0px;
+    top: 40px;
+    z-index: 1;
 }
 
 #handle {
@@ -151,7 +175,7 @@ body {
     color: #88A4E8;
     padding: 8px;
     border-radius: 100px;
-    margin:3px;
+    margin: 3px;
 }
 
 .genre_pill_text {
@@ -169,3 +193,108 @@ nav {
     align-items: center;
     justify-items: center;
 }
+
+.detail_top {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.detail_image {
+    position: absolute;
+    width: 100%;
+}
+
+#path {
+    position: absolute;
+    z-index: 1;
+}
+
+#play {
+    position: absolute;
+    z-index: 2;
+}
+
+#play_icon {
+    position: relative;
+    top: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#play_trailer {
+    position: absolute;
+    z-index: 1;
+    top: 160px;
+    color: white;
+    font-family: 'Mulish';
+    font-size: 14px;
+}
+
+#film_detail {
+    height: 538px;
+    background-color: white;
+    max-width: 480px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 300px;
+    display: grid;
+    grid-template-columns: 20px 100px;
+    grid-template-rows: 40px 40px 140px;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+#film_title {
+    font-family: 'Mulish';
+    font-size: 1.5rem;
+    grid-column: 1 / 4;
+}
+
+#description {
+    max-width: 405px;
+    grid-row: 3;
+    grid-column: 1 / 4;
+    position: absolute;
+    top: 0px;
+}
+
+#description_text {
+    font-size: 1.4em;
+    font-family: 'Merriweather';
+}
+
+#overview {
+    color: #9C9C9C;
+    font-family: 'Mulish';
+    line-height: 22px;
+}
+
+.actor {
+    width: 100px;
+    height: 150px;
+}
+
+.cast_section {
+    display: flex;
+    grid-row: 3;
+    overflow-x: scroll;
+    max-width: 480px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.cast_text {
+    position: absolute;
+    bottom: 150px;
+    left: 20px;
+    font-family: 'Merriweather';
+    font-size: 1.5em;
+    font-weight: bold;
+    
+}
+
