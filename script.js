@@ -15,8 +15,6 @@ let popular_url = "https://api.themoviedb.org/3/movie/popular";
 let showing_movies = [];
 let popular_movies_list = [];
 
-let id = 969681;
-
 fetch(now_playing_url, {
   headers: {
     accept: 'application/json',

@@ -15,10 +15,11 @@ main {
 
 .arrow {
     position: absolute;
-    top: 50px;
+    top: 46px;
     left: 50px;
     z-index: 1;
     cursor: pointer;
+    width: 30px;
 }
 
 #root {
@@ -102,6 +103,7 @@ main {
     left: 2px;
     bottom: 0px;
     right: 0px;
+    transition: left 1s linear;
 }
 
 .star {
@@ -238,7 +240,6 @@ nav {
 
 #film_detail {
     background-color: white;
-    max-width: 480px;
     position: absolute;
     left: 0;
     right: 0;
@@ -255,7 +256,6 @@ nav {
 }
 
 #description {
-    max-width: 405px;
     grid-row: 3;
 }
 
