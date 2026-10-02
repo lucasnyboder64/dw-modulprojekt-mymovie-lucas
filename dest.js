@@ -1,5 +1,6 @@
 import { Image } from "./components/Image.js";
 import { GenrePill } from "./components/GenrePill.js";
+import { genres } from "./genres.js";
 
 let token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiN2UyMmY2ZTViNmE5YTdjMWU1OWUyNDBlMDg1OWExZSIsIm5iZiI6MTc5MDU3ODY4OC42MjMwMDAxLCJzdWIiOiI2YWJhMTAwMGE4MTNiOThiNTQwNDA0Y2YiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.4W43qlkFjJPQ7fXwxbMSVrrneDq0JpFsrx7H7I5-HQw";
 
@@ -18,6 +19,9 @@ const ratingDiv = document.createElement("section");
 const description = document.querySelector("#description");
 const cast = document.createElement("section");
 cast.classList.add("cast_section");
+
+const genre_pill_container = document.createElement("div");
+genre_pill_container.classList.add("genre_pill_container");
 
 const arrow = document.querySelector(".arrow");
 
@@ -43,9 +47,8 @@ fetch(moviedb_url + "?append_to_response=credits", {
   const genres = document.createElement("div");
   genres.classList.add("genres");
 
- // genres.innerHTML = `<p class="genre_pill_text">${genre_ids && genre_ids.map((genre_id)=>GenrePill(genres.find((genre)=>genre.id==genre_id).name.toUpperCase())).join("")}</p>`;
-  //console.log(genre_ids);
   console.log(data);
+
   description.innerHTML = `
     <h1 id=description_text>Description</h1>
     <p id=overview>${data.overview}</p>
@@ -57,10 +60,19 @@ fetch(moviedb_url + "?append_to_response=credits", {
 
 
   data.credits.cast.forEach(actor => {
-    cast.innerHTML += `<img src=${"https://image.tmdb.org/t/p/original/"+actor.profile_path} class=actor>`
-  });
+    const actorDiv = document.createElement("div");
 
-  film_detail.append(description, cast, castText);
+    actorDiv.innerHTML += `<img src=${"https://image.tmdb.org/t/p/original/"+actor.profile_path} class=actor>
+    <p class=actor_name>${actor.name}</p>
+    `
+
+    cast.append(actorDiv);
+  });
+  
+  for(let i=0; i<=data.genres.length-1; i++){
+    genre_pill_container.innerHTML += `${GenrePill()}`;
+  }
+  film_detail.append(genre_pill_container, description, cast, castText);
 
   main.append(detail_top);
   main.append(film_detail, genres);

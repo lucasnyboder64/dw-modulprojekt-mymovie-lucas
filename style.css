@@ -169,13 +169,15 @@ main {
 }
 
 .genre_pill {
-    width: 61px;
+    width: auto;
     height: 18px;
     background-color: #DBE3FF;
     color: #88A4E8;
-    padding: 8px;
+    padding: 5px;
     border-radius: 100px;
     margin: 3px;
+    position: absolute;
+    top: 100px;
 }
 
 .genre_pill_text {
@@ -246,6 +248,7 @@ nav {
     align-items: center;
     gap: 10px;
     padding: 20px;
+    overflow: hidden;
 }
 
 #film_title {
@@ -276,21 +279,26 @@ nav {
 .actor {
     width: 100px;
     height: 150px;
+    border-radius: 10px;
 }
 
 .cast_section {
     display: flex;
     grid-row: 3;
     overflow-x: scroll;
+    overflow-y: hidden;
+    padding-left: 20px;
     max-width: 480px;
     width: 100%;
     position: absolute;
     bottom: 0;
+    gap: 10px;
+    height: 210px;
 }
 
 .cast_text {
     position: absolute;
-    bottom: 150px;
+    bottom: 210px;
     left: 20px;
     font-family: 'Merriweather';
     font-size: 1.5em;
@@ -298,3 +306,15 @@ nav {
     
 }
 
+.actor_name {
+    color: #110E47;
+    font-family: 'Mulish';
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.genre_pill_container {
+    grid-row: 3;
+    display: flex;
+    gap: 40px;
+}
