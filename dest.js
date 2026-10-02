@@ -41,7 +41,7 @@ fetch(moviedb_url + "?append_to_response=credits", {
   detail_top.append(img);
   film_detail.innerHTML = `<h1 id=film_title>${data.title}</h1>
   
-                <p class="rating_text"><img src="images/star.svg" class="star"> ${data.vote_average} /10 IMDb</p>
+                <p class="rating_text"><img src="images/star.svg" class="star"> ${data.vote_average.toFixed(2)} /10 IMDb</p>
                 `;
   
   const genres = document.createElement("div");

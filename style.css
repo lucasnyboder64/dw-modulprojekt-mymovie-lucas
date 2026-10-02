@@ -208,7 +208,6 @@ nav {
 .detail_image {
     position: absolute;
     width: 100%;
-    object-position: 0px -100px;
 }
 
 #path {
