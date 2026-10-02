@@ -50,7 +50,7 @@ main {
 
 #title h1 {
     font-family: 'Merriweather';
-    font-size: 2em;
+    font-size: 2rem;
 }
 
 .top h1 {
@@ -72,7 +72,7 @@ main {
 
 .movie h1 {
     font-family: 'Mulish';
-    font-size: 14px;
+    font-size: 1.3rem;
 }
 
 #toggle {
@@ -111,7 +111,7 @@ main {
 
 .rating_text {
     font-family: 'Mulish';
-    font-size: 12px;
+    font-size: 0.8rem;
     color: #9C9C9C;
 }
 
@@ -122,7 +122,7 @@ main {
 }
 
 .see_more {
-    font-size: 10px;
+    font-size: 0.7rem;
     background: white;
     border: 1px solid #AAA9B1;
     color: #AAA9B1;
@@ -206,6 +206,7 @@ nav {
 .detail_image {
     position: absolute;
     width: 100%;
+    object-position: 0px -100px;
 }
 
 #path {
@@ -232,7 +233,7 @@ nav {
     top: 160px;
     color: white;
     font-family: 'Mulish';
-    font-size: 14px;
+    font-size: 1rem;
 }
 
 #film_detail {
